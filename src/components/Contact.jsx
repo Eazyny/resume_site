@@ -86,9 +86,9 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, label: 'GitHub', href: 'https://github.com' },
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com' },
-    { icon: Twitter, label: 'Twitter', href: 'https://twitter.com' }
+    { icon: Github, label: 'GitHub', href: 'https://github.com/Eazyny' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/ozony-elsevif/' },
+    { icon: Twitter, label: 'Twitter', href: 'https://x.com/BlockchainEazy' }
   ];
 
   return (
@@ -173,7 +173,7 @@ const Contact = () => {
               <img
                 className="w-full h-full object-cover"
                 alt="Modern office workspace for collaboration"
-                src="https://images.unsplash.com/photo-1681184025442-1517cb9319c1"
+                src="/ozony-elsevif-1.png"
               />
             </div>
           </motion.div>
