@@ -6,7 +6,7 @@ const Experience = () => {
   const experiences = [
     {
       title: 'Community Manager',
-      company: 'BlockchainEazy / Web3 Projects',
+      company: 'Troverse / Web3 Projects',
       period: '2021 - Present',
       description:
         'Primary point of contact for community questions and technical issues, providing clear step-by-step support across multiple channels. Create documentation that reduces repeat questions and improves self-service.',
@@ -19,7 +19,7 @@ const Experience = () => {
     },
     {
       title: 'Environmental Services Manager',
-      company: 'Hospital Operations (New York, NY)',
+      company: 'NYC Health + Hospitals (New York, NY)',
       period: '2015 - 2022',
       description:
         'Led large-scale hospital operations in a fast-paced environment with time-sensitive workflows. Managed teams, scheduling, inspections, and rapid-response execution while coordinating with clinical and operations stakeholders.',
@@ -32,7 +32,7 @@ const Experience = () => {
     },
     {
       title: 'Front Desk Manager',
-      company: 'Front Desk Operations (New York, NY)',
+      company: 'Howard Johnson (New York, NY)',
       period: '2005 - 2016',
       description:
         'Managed front desk operations in a high-volume, customer-facing environment with constant schedule changes and time-sensitive issues. Built simple, repeatable processes and trained staff to resolve problems fast and consistently.',

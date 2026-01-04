@@ -6,14 +6,17 @@
   * {
     @apply border-border;
   }
+
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-slate-900 text-white;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-family: 'Oxanium', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 @layer utilities {

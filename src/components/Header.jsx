@@ -7,10 +7,10 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -33,10 +33,26 @@ const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-      }`}
+      className={[
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        isScrolled
+          ? 'bg-slate-900/35 backdrop-blur-lg border-b border-white/10 shadow-lg shadow-blue-500/10'
+          : 'bg-transparent border-b border-transparent'
+      ].join(' ')}
     >
+      {/* Glow layer (only when scrolled) */}
+      <div
+        className={[
+          'pointer-events-none absolute inset-x-0 top-0 h-24 -z-10 transition-opacity duration-300',
+          isScrolled ? 'opacity-100' : 'opacity-0'
+        ].join(' ')}
+        style={{
+          background:
+            'radial-gradient(circle at 20% 20%, rgba(59,130,246,.18), transparent 60%), radial-gradient(circle at 80% 30%, rgba(168,85,247,.14), transparent 60%)',
+          filter: 'blur(16px)'
+        }}
+      />
+
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <motion.div
@@ -68,6 +84,7 @@ const Header = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
