@@ -73,9 +73,7 @@ const Hero = () => {
                 className="border-blue-400 text-blue-400 hover:bg-blue-400/10 px-6 py-6 text-base"
               >
                 <Mail className="w-5 h-5 mr-2" />
-                <DecodedText speed={12}>
-                  Contact Me
-                </DecodedText>
+                <DecodedText speed={12}>Contact Me</DecodedText>
               </Button>
             </motion.div>
           </motion.div>
@@ -87,15 +85,20 @@ const Hero = () => {
             className="relative"
           >
             <div className="relative w-full aspect-square max-w-md mx-auto">
+              {/* glow blob behind */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full opacity-20 blur-3xl" />
-              <img
-                src="/ozony-elsevif.webp"
-                alt="Ozony Elsevif"
-                className="w-full h-full object-cover object-[center_20%]"
-                decoding="async"
-                fetchpriority="high"
-                loading="eager"
-              />
+
+              {/* ✅ THIS wrapper is what actually clips & rounds */}
+              <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl">
+                <img
+                  src="/ozony-elsevif.webp"
+                  alt="Ozony Elsevif"
+                  className="w-full h-full object-cover object-[20%_20%] -scale-x-100"
+                  decoding="async"
+                  fetchpriority="high"
+                  loading="eager"
+                />
+              </div>
             </div>
           </motion.div>
         </div>
