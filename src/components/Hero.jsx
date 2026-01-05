@@ -89,9 +89,12 @@ const Hero = () => {
             <div className="relative w-full aspect-square max-w-md mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full opacity-20 blur-3xl" />
               <img
-                className="relative z-10 w-full h-full object-cover rounded-2xl shadow-2xl scale-x-[-1]"
-                alt="Ozony Elsevif — IT Support portrait"
-                src="/ozony-elsevif.png"
+                src="/ozony-elsevif.webp"
+                alt="Ozony Elsevif"
+                className="w-full h-full object-cover object-[center_20%]"
+                decoding="async"
+                fetchpriority="high"
+                loading="eager"
               />
             </div>
           </motion.div>

@@ -176,9 +176,12 @@ const Contact = () => {
 
             <div className="relative h-64 rounded-xl overflow-hidden">
               <img
-                className="w-full h-full object-cover object-top"
-                alt="Modern office workspace for collaboration"
-                src="/ozony-elsevif-1.png"
+                src="/ozony-elsevif-1.webp"
+                alt="Ozony Elsevif"
+                className="w-full h-full object-cover object-[center_20%]"
+                decoding="async"
+                fetchpriority="high"
+                loading="eager"
               />
             </div>
           </motion.div>
