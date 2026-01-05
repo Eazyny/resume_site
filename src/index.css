@@ -10,12 +10,31 @@
   html {
     @apply font-sans;
     scroll-behavior: smooth;
+    height: 100%;
   }
 
   body {
-    @apply bg-slate-900 text-white;
+    @apply text-white;
+    min-height: 100%;
+    margin: 0;
+
     font-family: 'Oxanium', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
       'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  }
+
+  /* ✅ THEME COLORS (clickable swatches in VS Code) */
+  :root {
+    --bg-1: #0b1220; /* top-left */
+    --bg-2: #0f172a; /* center */
+    --bg-3: #0b1220; /* bottom-right */
+  }
+}
+
+@layer components {
+  /* ✅ Put the background on the actual app wrapper (not body) */
+  .app-bg {
+    background-color: var(--bg-2);
+    background-image: linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
   }
 }
 
