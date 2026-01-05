@@ -18,7 +18,6 @@
     min-height: 100%;
     margin: 0;
 
-    /* ✅ add emoji-capable fallbacks so ✉️ renders instead of a square */
     font-family: 'Oxanium', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
       'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
       'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji',
@@ -30,6 +29,9 @@
     --bg-1: #0b1220; /* top-left */
     --bg-2: #0f172a; /* center */
     --bg-3: #0b1220; /* bottom-right */
+
+    /* ✅ Accent (Tailwind blue-400) */
+    --accent: rgb(96 165 250);
   }
 }
 
@@ -38,6 +40,52 @@
   .app-bg {
     background-color: var(--bg-2);
     background-image: linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
+  }
+
+  /* ✅ Blue-tinted SVG logo via mask */
+  .oz-logo {
+    width: 28px;
+    height: 28px;
+    background-color: var(--accent);
+
+    -webkit-mask: url('/NewLogoWhite.svg') no-repeat center / contain;
+    mask: url('/NewLogoWhite.svg') no-repeat center / contain;
+
+    transform-origin: center;
+
+    /* ✅ always "has" the animation, but paused */
+    animation: oz-spin 2000ms linear infinite;
+    animation-play-state: paused;
+  }
+
+  /* ✅ wrapper: glow only (no movement) */
+  .oz-logo-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* soft corners so glow feels nice */
+    padding: 2px; /* tiny breathing room */
+    transition: filter 200ms ease;
+  }
+
+  /* ✅ glow on hover + keyboard focus */
+  .oz-logo-wrap:hover,
+  .oz-logo-wrap:focus-visible {
+    filter: drop-shadow(0 0 14px rgba(96, 165, 250, 0.35))
+      drop-shadow(0 0 34px rgba(96, 165, 250, 0.35))
+      drop-shadow(0 0 60px rgba(96, 165, 250, 0.18));
+  }
+
+  /* ✅ run the spin only while hovered/focused (stops and stays where it ends) */
+  .oz-logo-wrap:hover .oz-logo,
+  .oz-logo-wrap:focus-visible .oz-logo {
+    animation-play-state: running;
+  }
+
+  @keyframes oz-spin {
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
 

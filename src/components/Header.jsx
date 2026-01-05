@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import DecodedText from '@/components/ui/decode-text';
 
 const Header = () => {
@@ -30,6 +30,11 @@ const Header = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -56,14 +61,20 @@ const Header = () => {
 
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <motion.div
+          {/* Brand */}
+          <motion.button
+            type="button"
+            onClick={scrollToTop}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="flex items-center gap-2 text-xl font-bold text-white"
+            className="flex items-center gap-3 text-xl font-bold text-white"
+            aria-label="Go to top"
           >
-            <Code2 className="w-6 h-6 text-blue-400" />
+            <span className="oz-logo-wrap" aria-hidden="true">
+              <span className="oz-logo" />
+            </span>
             <span>Ozony Elsevif</span>
-          </motion.div>
+          </motion.button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -76,7 +87,7 @@ const Header = () => {
                 onClick={() => scrollToSection(item.href)}
                 className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
               >
-                <DecodedText>{item.label}</DecodedText>
+                <DecodedText speed={12}>{item.label}</DecodedText>
               </motion.button>
             ))}
           </div>
@@ -87,7 +98,11 @@ const Header = () => {
             className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -105,7 +120,7 @@ const Header = () => {
                 onClick={() => scrollToSection(item.href)}
                 className="block w-full text-left py-3 px-4 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors duration-200"
               >
-                <DecodedText>{item.label}</DecodedText>
+                <DecodedText speed={12}>{item.label}</DecodedText>
               </button>
             ))}
           </motion.div>
