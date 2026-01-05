@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import DecodedText from '@/components/ui/decode-text';
 
 const RESUME_URL = '/ozony-elsevif-resume.pdf';
 
@@ -63,7 +64,7 @@ const Hero = () => {
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-6 text-base"
               >
                 <Download className="w-5 h-5 mr-2" />
-                Download Resume
+                <DecodedText speed={12}>Download Resume</DecodedText>
               </Button>
 
               <Button
@@ -72,7 +73,9 @@ const Hero = () => {
                 className="border-blue-400 text-blue-400 hover:bg-blue-400/10 px-6 py-6 text-base"
               >
                 <Mail className="w-5 h-5 mr-2" />
-                Contact Me
+                <DecodedText speed={12}>
+                  Contact Me
+                </DecodedText>
               </Button>
             </motion.div>
           </motion.div>

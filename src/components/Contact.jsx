@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from '@/components/ui/use-toast';
+import DecodedText from '@/components/ui/decode-text';
+import { CheckCircle2 } from 'lucide-react';
+
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mbdlpabw';
 
@@ -55,9 +58,11 @@ const Contact = () => {
       }
 
       toast({
-        title: 'Message sent successfully! ✉️',
-        description: "Thank you for reaching out. I'll get back to you soon."
-      });
+          title: 'Message sent successfully!',
+          description: "Thank you for reaching out. I'll get back to you soon.",
+          icon: <CheckCircle2 className="h-4 w-4 text-emerald-300" />
+    });
+
 
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (err) {
@@ -259,7 +264,11 @@ const Contact = () => {
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-base font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <Send className="w-5 h-5 mr-2" />
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? (
+                    'Sending...'
+                  ) : (
+                    <DecodedText speed={12}>Send Message</DecodedText>
+                  )}
                 </Button>
               </div>
             </form>

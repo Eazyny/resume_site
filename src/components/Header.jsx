@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Code2 } from 'lucide-react';
+import DecodedText from '@/components/ui/decode-text';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -75,7 +76,7 @@ const Header = () => {
                 onClick={() => scrollToSection(item.href)}
                 className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
               >
-                {item.label}
+                <DecodedText>{item.label}</DecodedText>
               </motion.button>
             ))}
           </div>
@@ -104,7 +105,7 @@ const Header = () => {
                 onClick={() => scrollToSection(item.href)}
                 className="block w-full text-left py-3 px-4 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors duration-200"
               >
-                {item.label}
+                <DecodedText>{item.label}</DecodedText>
               </button>
             ))}
           </motion.div>
