@@ -1,10 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, Mail } from 'lucide-react';
+import {
+  Download,
+  Mail,
+  Monitor,
+  Network,
+  Shield,
+  Wrench,
+  Headphones,
+  Cloud,
+  Ticket,
+  Terminal,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import DecodedText from '@/components/ui/decode-text';
 
 const RESUME_URL = '/ozony-elsevif-resume.pdf';
+
+const coreSkills = [
+  { label: 'Windows 10/11', icon: Monitor },
+  { label: 'Troubleshooting', icon: Wrench },
+  { label: 'DNS / TCP/IP', icon: Network },
+  { label: 'Remote Support', icon: Headphones },
+  { label: 'Microsoft 365', icon: Cloud },
+  { label: 'Ticketing / Triage', icon: Ticket },
+  { label: 'PowerShell (Basics)', icon: Terminal },
+  { label: 'Security Awareness', icon: Shield },
+];
 
 const Hero = () => {
   const handleDownloadResume = () => {
@@ -75,6 +97,31 @@ const Hero = () => {
                 <Mail className="w-5 h-5 mr-2" />
                 <DecodedText speed={12}>Contact Me</DecodedText>
               </Button>
+            </motion.div>
+
+            {/* ✅ Core Skills strip */}
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55, duration: 0.5 }}
+              className="pt-2"
+            >
+              <p className="text-sm text-gray-500 mb-3">Core Skills</p>
+
+              <div className="flex flex-wrap gap-2">
+                {coreSkills.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <span
+                      key={item.label}
+                      className="inline-flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-900/40 px-3 py-1.5 text-sm text-gray-300 transition-colors hover:border-blue-500/50 hover:bg-blue-500/10"
+                    >
+                      <Icon className="h-4 w-4 text-blue-400" />
+                      {item.label}
+                    </span>
+                  );
+                })}
+              </div>
             </motion.div>
           </motion.div>
 

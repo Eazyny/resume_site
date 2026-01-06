@@ -17,9 +17,10 @@ const Header = () => {
 
   const navItems = [
     { label: 'Skills', href: '#skills' },
+    { label: 'HomeLabs', href: '#homelabs' },
     { label: 'Certifications', href: '#certifications' },
     { label: 'Experience', href: '#experience' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Contact', href: '#contact' },
   ];
 
   const scrollToSection = (href) => {

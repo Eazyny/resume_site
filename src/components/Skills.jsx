@@ -7,33 +7,42 @@ const Skills = () => {
     {
       icon: Monitor,
       title: 'Desktop Support',
-      skills: ['Windows 10/11', 'Hardware Troubleshooting', 'Software Installs', 'Printer Support', 'Basic macOS']
+      skills: ['Windows 10/11', 'Hardware Troubleshooting', 'Software Installs', 'Printer Support', 'Basic macOS'],
     },
     {
       icon: Network,
       title: 'Networking Fundamentals',
-      skills: ['TCP/IP', 'DNS', 'DHCP', 'Subnets (Basics)', 'Wi-Fi Troubleshooting']
+      skills: ['TCP/IP', 'DNS', 'DHCP', 'Subnets (Basics)', 'Wi-Fi Troubleshooting'],
     },
     {
       icon: Terminal,
-      title: 'Tools & Systems',
-      skills: ['Command Line (Basics)', 'Remote Support (RDP)', 'Ticketing (Basics)', 'Documentation', 'Google Workspace (Basics)']
+      title: 'Tools I Use',
+      skills: [
+        'Microsoft 365 (Outlook/Teams)',
+        'Google Workspace',
+        'Remote Desktop',
+        'Command Line',
+        'PowerShell',
+        'Ticketing Systems',
+        'VS Code',
+        'VPN Basics',
+      ],
     },
     {
       icon: Shield,
       title: 'Security Basics',
-      skills: ['MFA', 'Password Hygiene', 'Phishing Awareness', 'Device Updates', 'Least Privilege (Basics)']
+      skills: ['MFA', 'Password Hygiene', 'Phishing Awareness', 'Device Updates', 'Least Privilege (Basics)'],
     },
     {
       icon: Wrench,
       title: 'Troubleshooting Workflow',
-      skills: ['Issue Triage', 'Root Cause Thinking', 'Reproduce & Isolate', 'Escalation', 'Post-fix Verification']
+      skills: ['Issue Triage', 'Root Cause Thinking', 'Reproduce & Isolate', 'Escalation', 'Post-fix Verification'],
     },
     {
       icon: Headphones,
       title: 'Customer Support',
-      skills: ['Clear Communication', 'Empathy Under Pressure', 'User Training', 'Status Updates', 'Follow-ups']
-    }
+      skills: ['Clear Communication', 'Empathy Under Pressure', 'User Training', 'Status Updates', 'Follow-ups'],
+    },
   ];
 
   return (
@@ -72,6 +81,7 @@ const Skills = () => {
                   </div>
                   <h3 className="text-xl font-semibold text-white">{category.title}</h3>
                 </div>
+
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
                     <span

@@ -8,6 +8,7 @@ import Certifications from '@/components/Certifications';
 import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import Homelabs from '@/components/Homelabs';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <main>
           <Hero />
           <Skills />
+          <Homelabs />
           <Certifications />
           <Experience />
           <Contact />
