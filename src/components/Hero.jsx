@@ -11,11 +11,13 @@ import {
   Cloud,
   Ticket,
   Terminal,
+  ExternalLink,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import DecodedText from '@/components/ui/decode-text';
 
 const RESUME_URL = '/ozony-elsevif-resume.pdf';
+const RUNBOOK_URL = 'https://github.com/Eazyny/it-support-runbook';
 
 const coreSkills = [
   { label: 'Windows 10/11', icon: Monitor },
@@ -97,6 +99,19 @@ const Hero = () => {
                 <Mail className="w-5 h-5 mr-2" />
                 <DecodedText speed={12}>Contact Me</DecodedText>
               </Button>
+
+              {/* ✅ Runbook (high-visibility proof link) */}
+              <Button
+                asChild
+                variant="outline"
+                className="border-blue-400 text-blue-400 hover:bg-blue-400/10 px-6 py-6 text-base"
+              >
+                <a href={RUNBOOK_URL} target="_blank" rel="noreferrer">
+                  <ExternalLink className="w-5 h-5 mr-2" />
+                  <DecodedText speed={12}>View IT Runbook</DecodedText>
+                </a>
+              </Button>
+
             </motion.div>
 
             {/* ✅ Core Skills strip */}
