@@ -35,8 +35,6 @@ const Certifications = () => {
       pdfName: 'OperatingSystemsandYou.pdf',
       verificationUrl: 'https://www.coursera.org/verify/9QNIGDEBM1MT',
     },
-
-    // ✅ NEW CERT
     {
       title: 'System Administration and IT Infrastructure Services',
       issuer: 'Google',
@@ -46,7 +44,7 @@ const Certifications = () => {
         'Learned core system administration tasks, infrastructure services, and best practices for managing users, services, and enterprise environments.',
       pdfName: 'SystemAdministrator.pdf',
       // If you have a Coursera verify link, drop it here. Otherwise, keep it to your cert PDF.
-      verificationUrl: '/SystemAdministrator.pdf',
+      verificationUrl: 'https://www.coursera.org/verify/IBZO8E1TFB3U',
     },
   ];
 
