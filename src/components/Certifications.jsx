@@ -35,6 +35,19 @@ const Certifications = () => {
       pdfName: 'OperatingSystemsandYou.pdf',
       verificationUrl: 'https://www.coursera.org/verify/9QNIGDEBM1MT',
     },
+
+    // ✅ NEW CERT
+    {
+      title: 'System Administration and IT Infrastructure Services',
+      issuer: 'Google',
+      date: 'January 2026',
+      credentialId: 'GOOG-IT-004',
+      description:
+        'Learned core system administration tasks, infrastructure services, and best practices for managing users, services, and enterprise environments.',
+      pdfName: 'SystemAdministrator.pdf',
+      // If you have a Coursera verify link, drop it here. Otherwise, keep it to your cert PDF.
+      verificationUrl: '/SystemAdministrator.pdf',
+    },
   ];
 
   return (
@@ -55,7 +68,8 @@ const Certifications = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* ✅ Updated grid so 4 items looks clean */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.credentialId}
@@ -91,7 +105,7 @@ const Certifications = () => {
 
                   <a
                     href={cert.verificationUrl}
-                    target="_blank"
+                    target={cert.verificationUrl.startsWith('http') ? '_blank' : undefined}
                     rel="noreferrer"
                     className="text-blue-400 hover:text-blue-300 underline underline-offset-4"
                   >

@@ -91,7 +91,7 @@ const Hero = () => {
               {/* ✅ THIS wrapper is what actually clips & rounds */}
               <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl">
                 <img
-                  src="/ozony-elsevif.webp"
+                  src="/ozony-elsevif-t.webp"
                   alt="Ozony Elsevif"
                   className="w-full h-full object-cover object-[20%_20%] -scale-x-100"
                   decoding="async"
