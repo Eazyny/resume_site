@@ -43,8 +43,31 @@ const Certifications = () => {
       description:
         'Learned core system administration tasks, infrastructure services, and best practices for managing users, services, and enterprise environments.',
       pdfName: 'SystemAdministrator.pdf',
-      // If you have a Coursera verify link, drop it here. Otherwise, keep it to your cert PDF.
       verificationUrl: 'https://www.coursera.org/verify/IBZO8E1TFB3U',
+    },
+
+    // ✅ NEW: Course 5 (Security)
+    {
+      title: 'IT Security: Defense against the Digital Dark Arts',
+      issuer: 'Google',
+      date: 'January 2026', // <-- change if needed
+      credentialId: 'GOOG-IT-005',
+      description:
+        'Covered core security concepts including CIA triad, encryption basics, network security, authentication, and incident response fundamentals.',
+      pdfName: 'ITSecurity.pdf', // <-- make sure this matches the PDF in /public
+      verificationUrl: 'https://coursera.org/verify/YS67E8K4K2V4', // <-- replace
+    },
+
+    // ✅ NEW: Full Professional Certificate (Specialization completion)
+    {
+      title: 'Google IT Support Professional Certificate',
+      issuer: 'Google',
+      date: 'January 2026', // <-- change if needed
+      credentialId: 'GOOG-IT-PRO',
+      description:
+        'Completed the full Google IT Support Professional Specialization, demonstrating job-ready skills across troubleshooting, networking, operating systems, system administration, and security.',
+      pdfName: 'GoogleITSupportProfessionalCert.pdf', // <-- make sure this matches the PDF in /public
+      verificationUrl: 'https://coursera.org/verify/professional-cert/2FLTPOHX1URJ', // <-- replace
     },
   ];
 
@@ -66,7 +89,7 @@ const Certifications = () => {
           </p>
         </motion.div>
 
-        {/* ✅ Updated grid so 4 items looks clean */}
+        {/* ✅ 2 columns on md+ keeps 6 items clean (3 rows of 2) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {certifications.map((cert, index) => (
             <motion.div
@@ -74,13 +97,14 @@ const Certifications = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
               className="bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 flex flex-col h-full hover:shadow-lg hover:shadow-blue-500/10 group"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
                   <Award className="w-8 h-8 text-blue-400" />
                 </div>
+
                 <div className="flex items-center gap-1 text-xs font-medium text-green-400 bg-green-400/10 px-2 py-1 rounded-full border border-green-400/20">
                   <CheckCircle className="w-3 h-3" />
                   <span>Verified</span>
