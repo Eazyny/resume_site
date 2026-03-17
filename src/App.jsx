@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header';
@@ -11,11 +11,33 @@ import Footer from '@/components/Footer';
 import Homelabs from '@/components/Homelabs';
 
 function App() {
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+
+      const el = document.querySelector(hash);
+      if (!el) return;
+
+      setTimeout(() => {
+        el.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }, 300);
+    };
+
+    scrollToHash();
+  }, []);
+
   return (
     <>
       <Helmet>
         <title>Ozony Elsevif - IT Professional | IT Support</title>
-        <meta name="description" content="Professional IT resume showcasing skills in software development, cloud computing, and system architecture. View my certifications, experience, and get in touch." />
+        <meta
+          name="description"
+          content="Professional IT resume showcasing skills in software development, cloud computing, and system architecture. View my certifications, experience, and get in touch."
+        />
       </Helmet>
       <div className="min-h-screen app-bg">
         <Header />
