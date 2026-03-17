@@ -47,7 +47,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center pt-20 px-4">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -63,7 +63,7 @@ const Hero = () => {
               <p className="text-blue-400 font-semibold mb-2">
                 Based in NYC | IT Support (Entry-Level)
               </p>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
                 Ozony Elsevif
               </h1>
               <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
