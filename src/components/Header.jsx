@@ -44,14 +44,14 @@ const Header = () => {
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
           ? 'bg-slate-900/35 backdrop-blur-lg border-b border-white/10 shadow-lg shadow-blue-500/10'
-          : 'bg-transparent border-b border-transparent'
+          : 'bg-slate-900/35 backdrop-blur-lg border-b border-white/10 lg:bg-transparent lg:backdrop-blur-none lg:border-transparent'
       ].join(' ')}
     >
-      {/* Glow layer (only when scrolled) */}
+      {/* Glow layer */}
       <div
         className={[
           'pointer-events-none absolute inset-x-0 top-0 h-24 -z-10 transition-opacity duration-300',
-          isScrolled ? 'opacity-100' : 'opacity-0'
+          isScrolled ? 'opacity-100' : 'opacity-0 lg:opacity-0'
         ].join(' ')}
         style={{
           background:
@@ -78,7 +78,7 @@ const Header = () => {
           </motion.button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.label}
@@ -96,7 +96,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+            className="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {isMobileMenuOpen ? (
@@ -112,8 +112,7 @@ const Header = () => {
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 pb-4"
+            className="lg:hidden mt-4 pb-4 bg-slate-900/60 backdrop-blur-md rounded-xl border border-white/10"
           >
             {navItems.map((item) => (
               <button
