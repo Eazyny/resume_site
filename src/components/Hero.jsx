@@ -153,8 +153,8 @@ const Hero = () => {
               {/* ✅ THIS wrapper is what actually clips & rounds */}
               <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl">
                 <img
-                  src="/heroimage.webp"
-                  alt="Ozony Elsevif"
+                  src={`${import.meta.env.BASE_URL}heroimage.webp`}
+                  alt="Hero Image"
                   className="w-full h-full object-cover object-[20%_20%] -scale-x-100"
                   decoding="async"
                   fetchpriority="high"

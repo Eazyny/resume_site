@@ -176,7 +176,7 @@ const Contact = () => {
 
             <div className="relative h-64 rounded-xl overflow-hidden">
               <img
-                src="/contactimage.webp"
+                src={`${import.meta.env.BASE_URL}contactimage.webp`}
                 alt="Ozony Elsevif"
                 className="w-full h-full object-cover object-[center_20%]"
                 decoding="async"
