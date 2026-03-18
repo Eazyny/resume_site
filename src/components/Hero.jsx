@@ -16,7 +16,7 @@ import {
 import { Button } from '@/components/ui/button';
 import DecodedText from '@/components/ui/decode-text';
 
-const RESUME_URL = '/ozony-elsevif-resume.pdf';
+const RESUME_URL = '/oeresume.pdf';
 const RUNBOOK_URL = 'https://github.com/Eazyny/it-support-runbook';
 
 const coreSkills = [
