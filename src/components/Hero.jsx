@@ -34,7 +34,7 @@ const Hero = () => {
   const handleDownloadResume = () => {
     const a = document.createElement('a');
     a.href = RESUME_URL;
-    a.download = 'ozony-elsevif-resume.pdf';
+    a.download = 'oeresume.pdf';
     document.body.appendChild(a);
     a.click();
     a.remove();
